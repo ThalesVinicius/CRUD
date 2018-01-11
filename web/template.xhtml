@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+        <title>Estudo SGE</title>
+
+        <h:outputStylesheet library="css" name="styles/custom.css" />
+        <h:outputStylesheet library="css" name="styles/layout.css" />
+        <h:outputStylesheet library="css" name="styles/components.css" />
+
+        <h:outputScript target="body" library="primefaces" name="jquery/jquery.js" />
+        <h:outputScript target="body" library="css" name="javascripts/app.js" />
+
+
+    </h:head>
+
+    <h:body >
+
+        <h:form acceptcharset="ISO-8859-1" id="form" lang="pt_BR"  enctype="multipart/form-data"  > 
+            <header class="aw-topbar">
+
+                <h:graphicImage library="css"  name="images/logo.png" />
+
+                <a href="#"  class="aw-toggle  js-toggle"><i class="fa  fa-bars"></i></a>
+                <a href="#" onclick="PF('bar').show();" class="aw-toggle  "><i class="fa  fa-bell-o"></i></a>
+
+
+                <div  style="font-style: italic; background-color: mediumaquamarine">
+                    <br/>  
+                </div>
+            </header>
+
+
+
+
+            <section class="aw-content  js-content">
+                <p:messages id="global" closable="true">
+                    <p:effect type="pulsate" event="load" delay="500" />
+                </p:messages>
+                <ui:insert name="content" />
+            </section>
+
+        </h:form>
+
+    </h:body>
+
+</html>

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+        <ui:composition template="./template.xhtml">
+            <ui:define name="content">
+                <p:panel>
+                    <f:facet name="header">
+                        Editar Curso
+                    </f:facet>
+                    <p:accordionPanel>
+                        <p:tab id="tabDados" title="Dados Gerais">  
+
+                            <br></br>
+                            <p:separator></p:separator>
+                            <br></br>
+
+                            <h:panelGrid columns="3">
+
+                                <h:outputLabel value="Nome:" />
+                                <p:inputText size="35" value="#{cursoController.entidade.nome}" /> 
+                                #{""}
+
+                                <h:outputLabel value="Sigla:" />           
+                                <p:inputText size="35" value="#{cursoController.entidade.sigla}" />
+                                #{""}
+
+                                <h:outputLabel value="Nível:" />           
+                                <p:inputText size="35" value="#{cursoController.entidade.nivel}" />
+                                #{""}
+                                <h:outputLabel value="Modalidade:" />           
+                                <p:selectOneMenu style="width:255px"  id="modalidade" value="#{cursoController.entidade.modalidade}">
+                                    <f:selectItem itemLabel="Selecione" itemValue=""/>   
+                                    <f:selectItem itemLabel="BACHARELADO" itemValue="BACHARELADO"/> 
+                                    <f:selectItem itemLabel="COMITANTE" itemValue="COMITANTE"/> 
+                                    <f:selectItem itemLabel="COMITANTE/SUBSEQUENTE" itemValue="COMITANTE/SUBSEQUENTE"/> 
+                                    <f:selectItem itemLabel="LICENCIATURA" itemValue="LICENCIATURA"/> 
+                                    <f:selectItem itemLabel="TÉCNICO INTEGRADO AO ENSINO MÉDIO" itemValue="TÉCNICO INTEGRADO AO ENSINO MÉDIO"/> 
+                                    <f:selectItem itemLabel="TECNÓLOGO" itemValue="TECNÓLOGO"/> 
+                                    
+                                </p:selectOneMenu> 
+
+                                #{""}
+                                <h:outputLabel value="Carga Horária do Estágio: " />           
+                                <p:inputText size="35" required="true" 
+                                             requiredMessage="É obrigatório preencher a carga Horária Minima do Estágio"
+                                             value="#{cursoController.entidade.CHME}" />
+                        
+                       
+                            </h:panelGrid>
+
+                           
+                        </p:tab>
+
+
+                    </p:accordionPanel>
+                    <ui:include src="botoesEntidade.xhtml">
+                        <ui:param name="controller" value="#{cursoController}"  />
+                    </ui:include>
+
+                </p:panel>
+            </ui:define>                     
+        </ui:composition>
+    </body>
+</html>
